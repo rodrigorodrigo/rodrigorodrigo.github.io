@@ -67,11 +67,11 @@
                 <div class="form-body">
                   <div class="container">
                     <div class="columns is-centered">
-                      <form action="POST" class="box">
+                      <form action="https://formspree.io/xqkdopgy" method="POST">
                         <div class="field">
                           <label class="label">Name</label>
                           <div class="control has-icons-left">
-                            <input type="name" placeholder="John" class="input" required>
+                            <input type="name" placeholder="John Doe" class="input" required>
                             <span class="icon is-small is-left">
                               <i class="fa fa-user-check"></i>
                             </span>
@@ -91,21 +91,21 @@
 
 
 
-                        <div class="select is-left">
-                          <select>
-                            <option>Select subject</option>
-                            <option>Accounting</option>
-                            <option>Marketing</option>
-                            <option>Support</option>
-                            <option>Pilot Support</option>
-                            <option>Other</option>
+                        <div class="select is-primary">
+                          <select name="subject">
+                            <option value="null">Select subject</option>
+                            <option value="Accounting">Accounting</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Support">Support</option>
+                            <option value="Pilot Support">Pilot Support</option>
+                            <option value="Other">Other</option>
                           </select>
                         </div>
                     <br><br>
                         <div class="field">
-                          <label class="label">Reason for contact</label>
+                          <label class="label">Message</label>
 
-                          <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+                          <textarea name="message" class="textarea" placeholder="Please state the reason for contact"></textarea>
 
 
                         </div>
@@ -114,13 +114,13 @@
 
                         <div class="field">
                           <label class="checkbox">
-                            <input type="checkbox">
+                            <input type="checkbox" name="TermsAndConditions">
                             I agree to the <a href="#">terms and conditions</a>
                           </label>
                         </div>
                         <div class="field">
-                          <button class="button is-success">
-                            Login &nbsp;
+                          <button class="button is-success submit">
+                            Send Message &nbsp;
                             <i class="fa fa-paper-plane"></i>
                           </button>
                         </div>
@@ -514,23 +514,21 @@
 
 <footer>
 
-  <div class="form column is-5">
-    <div class="subtitle">
-      <span>Subscribe!</span>
-    </div>
+  <div class="form column is-7">
 
-    <form action="https://formspree.io/xqkdqvez" method="POST">
+
+    <form action="https://formspree.io/xqkdqvez"
+    method="POST"
+    >
       <div class="field">
         <label class="label">Name</label>
-        <div class="control">
           <input class="input is-small" type="text" name="name" placeholder="Your Name">
-        </div>
       </div>
 
       <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-danger is-small" type="email" placeholder="Email" name="_replyto">
+          <input class="input is-small" type="email" placeholder="Email" name="_replyto" required>
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -538,7 +536,6 @@
             <i class="fas fa-exclamation-triangle"></i>
           </span>
         </div>
-        <p class="help is-danger">This email is invalid</p>
       </div>
 
 
@@ -546,7 +543,7 @@
         <div class="control is-small">
           <label class="checkbox">
             <input type="checkbox">
-            <a> I agree to the terms and conditions</a>
+            I agree to the <a href="#">terms and conditions</a>
           </label>
         </div>
       </div>
@@ -554,7 +551,7 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button type="button">Subscribe!</button>
+          <button type="submit">Subscribe!</button>
         </div>
 
 
@@ -565,11 +562,12 @@
     </form>
   </div>
 
-
-  <div class="is-7 has-text-centered">
+<section class="hero is-danger">
+  <div class="has-text-centered">
     <span>Because buying, selling and renting used flying vehicles should be as easy buying
       a pint of beer...</span>
   </div>
+</section>
 
 
 

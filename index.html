@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A site that aims to be a quick and easy solution to buy private jets and helicopters">
+  <meta name="description"
+    content="A site that aims to be a quick and easy solution to buy private jets and helicopters">
   <title>PayN'Fly</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css"/>
-<link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
 
 </head>
@@ -17,33 +18,28 @@
   <nav class="navbar is-transparent is-fixed-top is-spaced level-item has-text-centered">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src=images/pseudoLogo.png alt="logo">
+        <img src="images/pseudoLogo.png" alt="logo">
       </a>
     </div>
 
 
-    <div class="navbar-menu">
+    <div class="navbar-brand">
       <a class="navbar" href="/">
-      <p class="title is-1 navbar" href="/">
-        PayN'Fly
-      </p></a>
-  </div>
-
-
-
-
-  <div id="navMob" class="navbar-menu is-active is-hidden-desktop">
-    <a class="navbar-burger burger" role="button" data-target="navMob">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+        <p class="title is-1 navbar">
+          PayN'Fly
+        </p>
+      </a>
     </div>
-  </div>
 
-<div id="navMob" class="navbar-menu">
 
-      <div class="navbar-end is-hidden-touch">
+<div class="navbar-burger" id="navbar-burger-id" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
+      <div id="navbar-menu-id" class="navbar-menu">
+        <div class="navbar-end">
 
         <a class="navbar-item" href="https://instagram.com/" target="_blank">
           <span class="icon">
@@ -59,54 +55,129 @@
         </a>
 
 
+        <a class="navbar-item modal-button" data-target="#contactModal"
+          aria-haspopup="true">Contact</a>
 
-        <a class="navbar-item" href="contact.html">
-          <span>Contact</span>
-        </a>
-
-        <button class="navbar-item button is-rounded modal-button" data-target="#myModal" aria-haspopup="true">Login</button>
-
-        <div class="modal" id="myModal">
+        <div class="modal" id="contactModal">
           <div class="modal-background"></div>
           <div class="modal-content">
             <div class="box">
 
-              <section class="hero">
-                <div class="hero-body">
+              <section class="form">
+                <div class="form-body">
                   <div class="container">
                     <div class="columns is-centered">
-                        <form action="" class="box">
-                          <div class="field">
-                            <label for="" class="label">Email</label>
-                            <div class="control has-icons-left">
-                              <input type="email" placeholder="email@email.com" class="input" required>
-                              <span class="icon is-small is-left">
-                                <i class="fa fa-envelope-square"></i>
-                              </span>
-                            </div>
+                      <form action="POST" class="box">
+                        <div class="field">
+                          <label class="label">Name</label>
+                          <div class="control has-icons-left">
+                            <input type="name" placeholder="John" class="input" required>
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-user-check"></i>
+                            </span>
                           </div>
-                          <div class="field">
-                            <label for="" class="label">Password</label>
-                            <div class="control has-icons-left">
-                              <input type="password" placeholder="*******" class="input" required>
-                              <span class="icon is-small is-left">
-                                <i class="fa fa-unlock"></i>
-                              </span>
-                            </div>
+                        </div>
+
+
+                        <div class="field">
+                          <label class="label">Email</label>
+                          <div class="control has-icons-left">
+                            <input type="email" placeholder="email@email.com" class="input" required>
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-envelope-square"></i>
+                            </span>
                           </div>
-                          <div class="field">
-                            <label for="" class="checkbox">
-                              <input type="checkbox">
-                             Remember me
-                            </label>
+                        </div>
+
+
+
+                        <div class="select is-left">
+                          <select>
+                            <option>Select subject</option>
+                            <option>Accounting</option>
+                            <option>Marketing</option>
+                            <option>Support</option>
+                            <option>Pilot Support</option>
+                            <option>Other</option>
+                          </select>
+                        </div>
+                    <br><br>
+                        <div class="field">
+                          <label class="label">Reason for contact</label>
+
+                          <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
+
+
+                        </div>
+
+
+
+                        <div class="field">
+                          <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the <a href="#">terms and conditions</a>
+                          </label>
+                        </div>
+                        <div class="field">
+                          <button class="button is-success">
+                            Login &nbsp;
+                            <i class="fa fa-paper-plane"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        <button class="navbar-item button is-rounded modal-button" data-target="#loginModal"
+          aria-haspopup="true">Login</button>
+
+        <div class="modal" id="loginModal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box">
+
+              <section class="form">
+                <div class="form-body">
+                  <div class="container">
+                    <div class="columns is-centered">
+                      <form action="POST" class="box">
+                        <div class="field">
+                          <label class="label">Email</label>
+                          <div class="control has-icons-left">
+                            <input type="email" placeholder="email@email.com" class="input" required>
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-envelope-square"></i>
+                            </span>
                           </div>
-                          <div class="field">
-                            <button class="button is-success">
-                              Login &nbsp; 
-                         <i class="fa fa-paper-plane"></i>
-                            </button>
+                        </div>
+                        <div class="field">
+                          <label class="label">Password</label>
+                          <div class="control has-icons-left">
+                            <input type="password" placeholder="*******" class="input" required>
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-unlock"></i>
+                            </span>
                           </div>
-                        </form>
+                        </div>
+                        <div class="field">
+                          <label class="checkbox">
+                            <input type="checkbox">
+                            Remember me
+                          </label>
+                        </div>
+                        <div class="field">
+                          <button class="button is-success">
+                            Login &nbsp;
+                            <i class="fa fa-paper-plane"></i>
+                          </button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -117,256 +188,233 @@
         </div>
       </div>
     </div>
+    </div>
   </nav>
+  <main>
+    <section class="section hero is-danger">
 
-<main>
-  <section class="section hero is-rounded is-danger">
-   
-    </div>
 
-    <div>
-      <br>
-      <p class="title is-3">
-        Airplanes
-      </p>
-      <br>
+      <div>
+        <br>
+        <p class="title is-3">
+          Airplanes
+        </p>
+        <br>
 
-    </div>
-    <div class="tile is-ancestor">
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">Cessna Citation X</p>
-          <p class="subtitle is-6">Private Jet</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane1.jpg" alt="Photo of airplane" title="Cessna Citation X">
-          </figure>
-          <br>
-
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-
-          <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
-            Buy Now
-            <!--try to implement-->
-            <div class="modal" id="myModal">
-              <div class="modal-background"></div>
-              <div class="modal-content">
-                <div class="box"></div>
-          </button>
-
-<!--Photo by JOSHUA COLEMAN on Unsplash -->
-               </article>
       </div>
+      <div class="tile is-ancestor">
 
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">McDonnell Douglas F/A-18</p>
-          <p class="subtitle is-6">U.S NAVY Squadron Jet</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane2.jpg" alt="Photo of airplane" title="McDonnell Douglas F/A-18">
-          </figure>
-          <br>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Cessna Citation X</p>
+            <p class="subtitle is-6">Private Jet</p>
+            <figure class="image is-4by3">
+              <img src="/images/plane1.jpg" alt="Photo of airplane" title="Cessna Citation X">
+            </figure>
+            <br>
 
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
+            <button class="button">
+              Details
+            </button>
 
-          <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
-            Buy Now
-            <!--try to implement-->
-            <div class="modal" id="myModal">
-              <div class="modal-background"></div>
-              <div class="modal-content">
-                <div class="box"></div>
-          </button>
-<!--Photo by Chandler Cruttenden on Unsplash -->
-</article>
+            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+              Buy Now
+
+            </button>
+
+            <!--Photo by JOSHUA COLEMAN on Unsplash -->
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">McDonnell Douglas F/A-18</p>
+            <p class="subtitle is-6">U.S NAVY Squadron Jet</p>
+            <figure class="image is-4by3">
+              <img src="/images/plane2.jpg" alt="Photo of airplane" title="McDonnell Douglas F/A-18">
+            </figure>
+            <br>
+
+            <button class="button">
+              Details
+            </button>
+
+            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+              Buy Now
+
+            </button>
+            <!--Photo by Chandler Cruttenden on Unsplash -->
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Commercial A300 Jet</p>
+            <p class="subtitle is-6">Original Delta Decals included</p>
+            <figure class="image is-4by3">
+              <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet">
+            </figure>
+            <br>
+
+            <button class="button">
+              Details
+              <!--try to implement-->
+            </button>
+            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+              Buy Now
+
+            </button>
+            <!--Photo by Chandler Cruttenden on Unsplash -->
+
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Red Propeller Plane</p>
+            <p class="subtitle is-6">Newly Renovated</p>
+            <figure class="image is-4by3">
+              <img src="/images/plane4.jpg" alt="Photo of airplane" title="Red Propeller Plane">
+
+            </figure>
+            <br>
+            <button class="button">
+              Details
+              <!--try to implement-->
+            </button>
+            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+              Buy Now
+              <!--try to implement-->
+
+            </button>
+            <!--Photo by Gary Wann on Unsplash -->
+          </article>
+        </div>
+
+
       </div>
+    </section>
 
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">Commercial A300 Jet</p>
-          <p class="subtitle is-6">Original Delta Decals included</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet">
-          </figure>
-          <br>
-
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-          <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
-            Buy Now
-            <!--try to implement-->
-            <div class="modal" id="myModal">
-              <div class="modal-background"></div>
-              <div class="modal-content">
-                <div class="box"></div>
-          </button>
-<!--Photo by Chandler Cruttenden on Unsplash -->
-
-</article>
-      </div>
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">Red Propeller Plane</p>
-          <p class="subtitle is-6">Newly Renovated</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane4.jpg" alt="Photo of airplane" title="Red Propeller Plane">
-
-          </figure>
-          <br>
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-          <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
-            Buy Now
-            <!--try to implement-->
-            <div class="modal" id="myModal">
-              <div class="modal-background"></div>
-              <div class="modal-content">
-                <div class="box"></div>
-          </button>
-<!--Photo by Gary Wann on Unsplash -->
-</article>
-</div>
-
-
-    </div>
-    </div>
-  </section>
-
-<br>
-
-    <section class="section hero is-rounded is-warning">
-    <p>
-    <div>
-      <p class="title is-3">
-        Helicopters
-      </p>
     <br>
 
-    </div>
-    <div class="tile is-ancestor">
+    <section class="section hero is-rounded is-warning">
+      <p>
+        <div>
+          <p class="title is-3">
+            Helicopters
+          </p>
+          <br>
 
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
-          <p class="title">Cessna Citation X</p>
-          <p class="subtitle">Optional subtitle?</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane1.jpg">
-          </figure>
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-          <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
-            Buy Now
-            <!--try to implement-->
-            <div class="modal" id="myModal">
-              <div class="modal-background"></div>
-              <div class="modal-content">
-                <div class="box"></div>
-          </button>
-<!--Photo by JOSHUA COLEMAN on Unsplash -->
-               </article>
-      </div>
+        </div>
+        <div class="tile is-ancestor">
 
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
-          <p class="title">U.S NAVY Squadron Jet</p>
-          <p class="subtitle">McDonnell Douglas F/A-18</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane2.jpg">
-          </figure>
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-<!--Photo by Chandler Cruttenden on Unsplash -->
-</article>
-      </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <p class="title">Cessna Citation X</p>
+              <p class="subtitle">Optional subtitle?</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane1.jpg" alt="plane1">
+              </figure>
+              <button class="button">
+                Details
+                <!--try to implement-->
+              </button>
+              <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+                Buy Now
+                <!--try to implement-->
 
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
-          <p class="title">Commercial A300 Jet</p>
-          <p class="subtitle">Original Delta Decals included</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane3.jpg">
-          </figure>
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-<!--Photo by Chandler Cruttenden on Unsplash -->
-
-</article>
-      </div>
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
-          <p class="title">Red Propeller Plane</p>
-          <p class="subtitle">Newly Renovated</p>
-          <figure class="image is-4by3">
-            <img src="/images/plane4.jpg">
-          </figure>
-          <button class="button">
-            Details
-            <!--try to implement-->
-          </button>
-<!--Photo by Gary Wann on Unsplash -->
-</article>
-</div>
-
-
-    </div>
-    </div>
-  </section>
-
-
-
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-        <main class="column" <h3 class="title is-4 boxed-section-title">
-          <div class="columns is-gapless">
-            <div class="Column">Our Numbers</div>
+              </button>
+              <!--Photo by JOSHUA COLEMAN on Unsplash -->
+            </article>
           </div>
 
-          <nav class="level">
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Numbers of planes listed</p>
-                <p class="title">16</p>
-              </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <p class="title">U.S NAVY Squadron Jet</p>
+              <p class="subtitle">McDonnell Douglas F/A-18</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane2.jpg" alt="plane2">
+              </figure>
+              <button class="button">
+                Details
+                <!--try to implement-->
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <p class="title">Commercial A300 Jet</p>
+              <p class="subtitle">Original Delta Decals included</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane3.jpg" alt="plane3">
+              </figure>
+              <button class="button">
+                Details
+                <!--try to implement-->
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <p class="title">Red Propeller Plane</p>
+              <p class="subtitle">Newly Renovated</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane4.jpg" alt="plane4">
+              </figure>
+              <button class="button">
+                Details
+                <!--try to implement-->
+              </button>
+              <!--Photo by Gary Wann on Unsplash -->
+            </article>
+          </div>
+
+
+        </div>
+    </section>
+
+
+
+    <div class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <div class="columns is-gapless">
+              <div class="subtitle">Our Numbers</div>
             </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Number of planes sold</p>
-                <p class="title">7</p>
+
+            <nav class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Numbers of planes listed</p>
+                  <p class="title">16</p>
+                </div>
               </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Numbers of helicopters listed</p>
-                <p class="title">6</p>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Number of planes sold</p>
+                  <p class="title">7</p>
+                </div>
               </div>
-            </div>
-            <div class="level-item has-text-centered">
-              <div>
-                <p class="heading">Number of helicopters sold</p>
-                <p class="title">2</p>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Numbers of helicopters listed</p>
+                  <p class="title">6</p>
+                </div>
               </div>
-            </div>
-          </nav>
-          <!--
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Number of helicopters sold</p>
+                  <p class="title">2</p>
+                </div>
+              </div>
+            </nav>
+            <!--
       Part 1: Main Store Page
 
       Requirements:
@@ -457,80 +505,76 @@
       in software is to let someone who didn't build it try to use it!
 
     -->
-
-        </main>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </nav>
+  </main>
 </body>
+
 <footer>
 
-<div class="form column is-5">
-  <div class="subtitle">
-    <span>Subscribe!</span>
-  </div>
-
-  <form
-  action="https://formspree.io/xqkdqvez"
-  method="POST"
->
-<div class="field">
-  <label class="label">Name</label>
-  <div class="control">
-    <input class="input is-small" type="text" name="name" placeholder="Your Name">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-danger is-small" type="email" placeholder="Email"name="_replyto">
-    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-  </div>
-  <p class="help is-danger">This email is invalid</p>
-</div>
-
-
-<div class="field">
-  <div class="control is-small">
-    <label class="checkbox">
-      <input type="checkbox">
-      I agree to the terms and conditions</a>
-    </label>
-  </div>
-</div>
-
-
-<div class="field is-grouped">
-  <div class="control">
-    <button type="submit button is-link">Subscribe!</button>
-  </div>
-
-
-  <!-- your other form fields go here -->
-
-  </div>
-
-</form>
-</div>
-
-
-    <div class="is-7 has-text-centered">
-      <span>Because buying, selling and renting used flying vehicles should be as easy buying
-        a pint of beer...</span>
-    </div>
+  <div class="form column is-5">
+    <div class="subtitle">
+      <span>Subscribe!</span>
     </div>
 
+    <form action="https://formspree.io/xqkdqvez" method="POST">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input is-small" type="text" name="name" placeholder="Your Name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-danger is-small" type="email" placeholder="Email" name="_replyto">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p class="help is-danger">This email is invalid</p>
+      </div>
 
 
-</div>
+      <div class="field">
+        <div class="control is-small">
+          <label class="checkbox">
+            <input type="checkbox">
+            <a> I agree to the terms and conditions</a>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button type="button">Subscribe!</button>
+        </div>
+
+
+        <!-- your other form fields go here -->
+
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="is-7 has-text-centered">
+    <span>Because buying, selling and renting used flying vehicles should be as easy buying
+      a pint of beer...</span>
+  </div>
+
+
+
 
 
 </footer>
+
 </html>

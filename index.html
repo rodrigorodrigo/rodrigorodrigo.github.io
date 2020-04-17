@@ -1,531 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A site that aims to be a quick and easy solution to buy private jets and helicopters"
+    />
+    <title>PayN'Fly</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="A site that aims to be a quick and easy solution to buy private jets and helicopters">
-  <title>PayN'Fly</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-
-</head>
-
-<body class="has-navbar-fixed-top">
-  <nav class="navbar is-transparent is-fixed-top is-spaced level-item has-text-centered">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="images/pseudoLogo.png" alt="logo">
-      </a>
-    </div>
-
-
-    <div class="navbar-brand">
-      <a class="navbar" href="/">
-        <p class="title is-1 navbar">
-          PayN'Fly
-        </p>
-      </a>
-    </div>
-
-    
-
-
-<div class="navbar-burger" id="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
-          <span></span>
-          <span></span> 
-          <span></span>
-        </div>
-
-
-        <div id="navbar-menu-id" class="navbar-menu">
-          <div class="navbar-end">
-  <h2 class="subtitle">Select aircraft type</h2>
-            <div class="dropdown is-active is-primary">
-              <select name="section" id="select">
-                <option class="is-active" value="none" id="none">Select</option>
-                <option value="all" id="all">All</option>
-                <hr>
-                <option value="airplanes" id="airplanes">Airplanes</option>
-                <option value="helicopters" id="helicopters">Helicopters</option>
-              </select>
-            </div>
-  
-
-        <a class="navbar-item" href="https://instagram.com/" target="_blank">
-          <span class="icon">
-            <i class="fab fa-instagram"></i>
-          </span>
+  <body class="has-navbar-fixed-top">
+    <nav class="navbar is-transparent is-fixed-top is-spaced level-item has-text-centered">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="images/pseudoLogo.png" alt="logo" />
         </a>
+      </div>
 
-
-        <a class="navbar-item" href="https://twitter.com/" target="_blank">
-          <span class="icon" style="color: #55acee;">
-            <i class="fab fa-twitter"></i>
-          </span>
+      <div class="navbar-brand">
+        <a class="navbar" href="/">
+          <p class="title is-1 navbar">
+            PayN'Fly
+          </p>
         </a>
+      </div>
 
+      <div class="navbar-burger" id="navbar-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-        <a class="navbar-item modal-button" data-target="#contactModal"
-          aria-haspopup="true">Contact</a>
+      <div id="navbar-menu-id" class="navbar-menu">
+        <div class="navbar-end">
+          <h2 class="subtitle">Select aircraft type</h2>
+          <div class="dropdown is-active is-primary">
+            <select name="section" id="select">
+              <option class="is-active" value="none" id="none">Select</option>
+              <option value="all" id="all">All</option>
+              <option value="airplanes" id="airplanes">Airplanes</option>
+              <option value="helicopters" id="helicopters">Helicopters</option>
+            </select>
+          </div>
 
-        <div class="modal" id="contactModal">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            <div class="box">
+          <a class="navbar-item" href="https://instagram.com/" target="_blank">
+            <span class="icon">
+              <i class="fab fa-instagram"></i>
+            </span>
+          </a>
 
-              <section class="form">
-                <div class="form-body">
-                  <div class="container">
-                    <div class="columns is-centered">
-                      <form action="https://httpbin.org/post" method="POST">
+          <a class="navbar-item" href="https://twitter.com/" target="_blank">
+            <span class="icon" style="color: #55acee;">
+              <i class="fab fa-twitter"></i>
+            </span>
+          </a>
 
-                        <div class="field">
-                          <label class="label">First Name</label>
-                          <div class="control has-icons-left">
-                            <input type="name" name="First Name" placeholder="John Doe" class="input" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-user-check"></i>
-                            </span>
+          <a class="navbar-item modal-button" data-target="#contactModal" aria-haspopup="true"
+            >Contact</a
+          >
+
+          <div class="modal" id="contactModal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <section class="form">
+                  <div class="form-body">
+                    <div class="container">
+                      <div class="columns is-centered">
+                        <form action="https://httpbin.org/post" method="POST">
+                          <div class="field">
+                            <label class="label">First Name</label>
+                            <div class="control has-icons-left">
+                              <input
+                                type="text"
+                                name="First Name"
+                                placeholder="John Doe"
+                                class="input"
+                                required
+                              />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-user-check"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-
-
-                        <div class="field">
-                          <label class="label">Last Name</label>
-                          <div class="control has-icons-left">
-                            <input type="name" name="Last Name" placeholder="John" class="input" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-user-check"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">Last Name</label>
+                            <div class="control has-icons-left">
+                              <input
+                                type="text"
+                                name="Last Name"
+                                placeholder="John"
+                                class="input"
+                                required
+                              />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-user-check"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-
-                        <div class="field">
-                          <label class="label" name="Email">Email</label>
-                          <div class="control has-icons-left">
-                            <input type="email" placeholder="Doe" class="input" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-envelope-square"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left">
+                              <input type="email" placeholder="Doe" class="input" required />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-envelope-square"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-
-                        <div class="field">
-                          <label class="label" >Address</label>
-                          <div class="control has-icons-left">
-                            <input type="address" name="Address" placeholder="" class="input" required>
-                            <span class="icon is-small is-left">
-                              <i class="fal fa-map-pin"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">Address</label>
+                            <div class="control has-icons-left">
+                              <input type="text" name="Address" class="input" required />
+                              <span class="icon is-small is-left">
+                                <i class="fal fa-map-pin"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-
-
-
-
-
-                        <div class="field">
-                          <label class="label">City</label>
-                          <div class="control has-icons-left">
-                            <input type="city" placeholder="" class="input" list="suggestions" name="City" required>
-                            <datalist id="suggestions">
-                              <!--[if lte IE 9]><select><![endif]-->
-                              <option label="Barrie" value="Barrie"></option>
-                              <option label="Calgary" value="Calgary"></option>
-                              <option label="Charlottetown" value="Charlottetown"></option>
-                              <option label="Chibougamau" value="Chibougamau"></option>
-                              <option label="Chilliwack" value="Chilliwack"></option>
-                              <option label="Cold Lake" value="Cold Lake"></option>
-                              <option label="Dorval" value="Dorval"></option>
-                              <option label="Edmonton" value="Edmonton"></option>
-                              <option label="Flin Flon" value="Flin Flon"></option>
-                              <option label="Hamilton" value="Hamilton"></option>
-                              <option label="Iqualuit" value="Iqualuit"></option>
-                              <option label="Ottawa" value="Ottawa"></option>
-                              <option label="Miramichi" value="Miramichi"></option>
-                              <option label="Montreal" value="Montreal"></option>
-                              <option label="Red Deer" value="Red Deer"></option>
-                              <option label="St. John" value="St. John"></option>
-                              <option label="St. John's" value="St. John's"></option>
-                              <option label="Toronto" value="Toronto"></option>
-                              <option label="Vancouver" value="Vancouver"></option>
-                              <option label="Whitehorse" value="Whitehorse"></option>
-                              <option label="Winnipeg" value="Winnipeg"></option>
-                              <option label="Yellowknife" value="Yellowknife"></option>
-                              <!--[if lte IE 9]></select><![endif]-->
-                            </datalist>
-                            <span class="icon is-small is-left">
-                              <i class="fas fa-city"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">City</label>
+                            <div class="control has-icons-left">
+                              <input
+                                type="text"
+                                placeholder=""
+                                class="input"
+                                list="suggestions"
+                                name="City"
+                                required
+                              />
+                              <datalist id="suggestions">
+                                <!--[if lte IE 9]><select><![endif]-->
+                                <option label="Barrie" value="Barrie"></option>
+                                <option label="Calgary" value="Calgary"></option>
+                                <option label="Charlottetown" value="Charlottetown"></option>
+                                <option label="Chibougamau" value="Chibougamau"></option>
+                                <option label="Chilliwack" value="Chilliwack"></option>
+                                <option label="Cold Lake" value="Cold Lake"></option>
+                                <option label="Dorval" value="Dorval"></option>
+                                <option label="Edmonton" value="Edmonton"></option>
+                                <option label="Flin Flon" value="Flin Flon"></option>
+                                <option label="Hamilton" value="Hamilton"></option>
+                                <option label="Iqualuit" value="Iqualuit"></option>
+                                <option label="Ottawa" value="Ottawa"></option>
+                                <option label="Miramichi" value="Miramichi"></option>
+                                <option label="Montreal" value="Montreal"></option>
+                                <option label="Red Deer" value="Red Deer"></option>
+                                <option label="St. John" value="St. John"></option>
+                                <option label="St. John's" value="St. John's"></option>
+                                <option label="Toronto" value="Toronto"></option>
+                                <option label="Vancouver" value="Vancouver"></option>
+                                <option label="Whitehorse" value="Whitehorse"></option>
+                                <option label="Winnipeg" value="Winnipeg"></option>
+                                <option label="Yellowknife" value="Yellowknife"></option>
+                                <!--[if lte IE 9]></select><![endif]-->
+                              </datalist>
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-city"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-
-
-                        <div class="field">
-                          <label class="label" >Phone Number</label>
-                          <div class="control has-icons-left">
-                            <input type="text" name="Phone" placeholder="" class="input" pattern="(1[.-])?(\(\d{3}\)[.-]|(\d{3}[.-]?)){2}\d{4}" required>
-                            <span class="icon is-small is-left">
-                              <i class="fal fa-map-pin"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">Phone Number</label>
+                            <div class="control has-icons-left">
+                              <input
+                                type="text"
+                                name="Phone"
+                                placeholder=""
+                                class="input"
+                                pattern="(1[.-])?(\(\d{3}\)[.-]|(\d{3}[.-]?)){2}\d{4}"
+                                required
+                              />
+                              <span class="icon is-small is-left">
+                                <i class="fal fa-map-pin"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-
-
-                        <div class="field">
-                          <label class="label" >Postal Code</label>
-                          <div class="control has-icons-left">
-                            <input type="text" name="PostalCode" placeholder="" class="input" pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$" required>
-                            <span class="icon is-small is-left">
-                              <i class="fal fa-map-pin"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">Postal Code</label>
+                            <div class="control has-icons-left">
+                              <input
+                                type="text"
+                                name="PostalCode"
+                                placeholder=""
+                                class="input"
+                                pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$"
+                                required
+                              />
+                              <span class="icon is-small is-left">
+                                <i class="fal fa-map-pin"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
 
-                        <label class="label checkbox" >
-                          <p>Would you like to be phoned?</p>
-                        <input type="checkbox" name="phoned?">
-
-                        </label>
-
-                        <div class="control">
-                          <label class="radio">
-                            <input type="radio" name="answer" value="question">
-                            Question
+                          <label class="label checkbox">
+                            Would you like to be phoned?
+                            <input type="checkbox" name="phoned?" />
                           </label>
-                          <label class="radio">
-                            <input type="radio" name="answer" value="comment">
-                            Comment
-                          </label>
-                          <label class="radio">
-                            <input type="radio" name="answer" id="orderproblem" value="orderproblem">
-                            Order Problem
-                          </label>
 
-                        </div>
-
-
-
-
-                        <div id="orderproblemtext" style="display: none">
-                          <textarea name="message" class="textarea is-small" placeholder="Order Number" rows="1"></textarea>
-
+                          <div class="control">
+                            <label class="radio">
+                              <input type="radio" name="answer" value="question" />
+                              Question
+                            </label>
+                            <label class="radio">
+                              <input type="radio" name="answer" value="comment" />
+                              Comment
+                            </label>
+                            <label class="radio">
+                              <input
+                                type="radio"
+                                name="answer"
+                                id="orderproblem"
+                                value="orderproblem"
+                              />
+                              Order Problem
+                            </label>
                           </div>
 
+                          <div id="orderproblemtext" style="display: none">
+                            <textarea
+                              name="message"
+                              class="textarea is-small"
+                              placeholder="Order Number"
+                              rows="1"
+                            ></textarea>
+                          </div>
 
-                    <br>
-                        <div class="field">
-                          <label class="label">Message</label>
+                          <br />
+                          <div class="field">
+                            <label class="label">Message</label>
 
-                          <textarea name="message" class="textarea" placeholder="Please state the reason for contact"></textarea>
+                            <textarea
+                              name="message"
+                              class="textarea"
+                              placeholder="Please state the reason for contact"
+                            ></textarea>
+                          </div>
 
+                          <div class="field is-hidden">
+                            <label class="label">
+                              <input type="text" name="Rodrigo" value="Rodrigo Chies" />
+                            </label>
+                          </div>
 
-                        </div>
-
-
-
-                        <div class="field is-hidden">
-                          <label class="label">
-                            <input type="text" name="Rodrigo" value="Rodrigo Chies">
-                          </label>
-                        </div>
-
-
-
-
-                        <div class="field">
-                          <button class="button is-success submit">
-                            Send Message &nbsp;
-                            <i class="fa fa-paper-plane"></i>
-                          </button>
-                        </div>
-                      </form>
+                          <div class="field">
+                            <button class="button is-success submit">
+                              Send Message &nbsp;
+                              <i class="fa fa-paper-plane"></i>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </section>
+                </section>
+              </div>
             </div>
+            <button class="modal-close is-large" aria-label="close"></button>
           </div>
-          <button class="modal-close is-large" aria-label="close"></button>
-        </div>
 
-        <button class="navbar-item button is-rounded modal-button" data-target="#loginModal"
-          aria-haspopup="true">Login</button>
+          <button
+            class="navbar-item button is-rounded modal-button"
+            data-target="#loginModal"
+            aria-haspopup="true"
+          >
+            Login
+          </button>
 
-        <div class="modal" id="loginModal">
-          <div class="modal-background"></div>
-          <div class="modal-content">
-            <div class="box">
-
-              <section class="form">
-                <div class="form-body">
-                  <div class="container">
-                    <div class="columns is-centered">
-                      <form action="POST" class="box">
-                        <div class="field">
-                          <label class="label">Email</label>
-                          <div class="control has-icons-left">
-                            <input type="email" placeholder="email@email.com" class="input" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-envelope-square"></i>
-                            </span>
+          <div class="modal" id="loginModal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <section class="form">
+                  <div class="form-body">
+                    <div class="container">
+                      <div class="columns is-centered">
+                        <form action="POST" class="box">
+                          <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left">
+                              <input
+                                type="email"
+                                placeholder="email@email.com"
+                                class="input"
+                                required
+                              />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-envelope-square"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                        <div class="field">
-                          <label class="label">Password</label>
-                          <div class="control has-icons-left">
-                            <input type="password" placeholder="*******" class="input" required>
-                            <span class="icon is-small is-left">
-                              <i class="fa fa-unlock"></i>
-                            </span>
+                          <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control has-icons-left">
+                              <input type="password" placeholder="*******" class="input" required />
+                              <span class="icon is-small is-left">
+                                <i class="fa fa-unlock"></i>
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                        <div class="field">
-                          <label class="checkbox">
-                            <input type="checkbox">
-                            Remember me
-                          </label>
-                        </div>
-                        <div class="field">
-                          <button class="button is-success">
-                            Login &nbsp;
-                            <i class="fa fa-paper-plane"></i>
-                          </button>
-                        </div>
-                      </form>
+                          <div class="field">
+                            <label class="checkbox">
+                              <input type="checkbox" />
+                              Remember me
+                            </label>
+                          </div>
+                          <div class="field">
+                            <button class="button is-success">
+                              Login &nbsp;
+                              <i class="fa fa-paper-plane"></i>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </section>
+                </section>
+              </div>
             </div>
+            <button class="modal-close is-large" aria-label="close"></button>
           </div>
-          <button class="modal-close is-large" aria-label="close"></button>
         </div>
       </div>
-    </div>
-    </div>
-  </nav>
-  <main>
-
-
-    <section class="section hero is-danger" id="airplanes-box">
-
-
-        <br>
+    </nav>
+    <main>
+      <section class="section hero is-danger" id="airplanes-box">
+        <br />
         <p class="title is-3">
           Airplanes
         </p>
-        <br>
+        <br />
 
-      <div class="tile is-ancestor">
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Cessna Citation X</p>
+              <p class="subtitle is-6">Private Jet</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane1.jpg" alt="Photo of airplane" title="Cessna Citation X" />
+              </figure>
+              <br />
 
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">Cessna Citation X</p>
-            <p class="subtitle is-6">Private Jet</p>
-            <figure class="image is-4by3">
-              <img src="/images/plane1.jpg" alt="Photo of airplane" title="Cessna Citation X">
-            </figure>
-            <br>
+              <button class="button modal-button" data-target="#details1Modal" aria-haspopup="true">
+                Details
+              </button>
 
-            <button class="button modal-button" data-target="#details1Modal" aria-haspopup="true">
-              Details
-            </button>
+              <div class="modal" id="details1Modal">
+                <div class="modal-background"></div>
 
-            <div class="modal" id="details1Modal">
-              <div class="modal-background"></div>
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/plane1.jpg"
+                        alt="Photo of airplane"
+                        title="Cessna Citation X"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Cessna Citation X</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Jet</p>
 
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/plane1.jpg" alt="Photo of airplane" title="Cessna Citation X">
-                  </figure>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
                 </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">Cessna Citation X</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Jet</p>
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-
-                    <br>
-                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
               </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
 
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
 
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-
-            <!--Photo by JOSHUA COLEMAN on Unsplash -->
-          </article>
-        </div>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">McDonnell Douglas F/A-18</p>
-            <p class="subtitle is-6">U.S NAVY Squadron Jet</p>
-            <figure class="image is-4by3">
-              <img src="/images/plane2.jpg" alt="Photo of airplane" title="McDonnell Douglas F/A-18">
-            </figure>
-            <br>
-
-            <button class="button modal-button" data-target="#details2Modal" aria-haspopup="true">
-              Details
-            </button>
-
-
-            <div class="modal" id="details2Modal">
-              <div class="modal-background"></div>
-
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/plane2.jpg" alt="Photo of airplane" title="McDonnell Douglas F/A-1">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">McDonnell Douglas F/A-18</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">U.S NAVY Squadron Jet</p>
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-            <!--Photo by Chandler Cruttenden on Unsplash -->
-          </article>
-        </div>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">Commercial A300 Jet</p>
-            <p class="subtitle is-6">Original Delta decals included</p>
-            <figure class="image is-4by3">
-              <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet">
-            </figure>
-            <br>
-
-            <button class="button modal-button" data-target="#details3Modal" aria-haspopup="true">
-              Details
-              <!--try to implement-->
-            </button>
-
-            <div class="modal" id="details3Modal">
-              <div class="modal-background"></div>
-
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">Commercial A300 Jet</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Original Delta decals included</p>
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-            <!--Photo by Chandler Cruttenden on Unsplash -->
-
-          </article>
-        </div>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">Red Propeller Plane</p>
-            <p class="subtitle is-6">Newly Renovated</p>
-            <figure class="image is-4by3">
-              <img src="/images/plane4.jpg" alt="Photo of airplane" title="Red Propeller Plane">
-
-            </figure>
-            <br>
-            <button class="button modal-button" data-target="#details4Modal" aria-haspopup="true">
-              Details
-              <!--try to implement-->
-            </button>
-
-            <div class="modal" id="details4Modal">
-              <div class="modal-background"></div>
-
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/plane4.jpg" alt="Photo of airplane" title="Red Propeller Plane">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">Red Propeller Plane</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Newly Renovated</p>
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-              <!--try to implement-->
-
-            </button>
-            <!--Photo by Gary Wann on Unsplash -->
-
+              <!--Photo by JOSHUA COLEMAN on Unsplash -->
+            </article>
           </div>
 
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">McDonnell Douglas F/A-18</p>
+              <p class="subtitle is-6">U.S NAVY Squadron Jet</p>
+              <figure class="image is-4by3">
+                <img
+                  src="/images/plane2.jpg"
+                  alt="Photo of airplane"
+                  title="McDonnell Douglas F/A-18"
+                />
+              </figure>
+              <br />
 
-          </article>
+              <button class="button modal-button" data-target="#details2Modal" aria-haspopup="true">
+                Details
+              </button>
 
-      </div>
+              <div class="modal" id="details2Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/plane2.jpg"
+                        alt="Photo of airplane"
+                        title="McDonnell Douglas F/A-1"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">
+                      McDonnell Douglas F/A-18
+                    </p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      U.S NAVY Squadron Jet
+                    </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Commercial A300 Jet</p>
+              <p class="subtitle is-6">Original Delta decals included</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet" />
+              </figure>
+              <br />
+
+              <button class="button modal-button" data-target="#details3Modal" aria-haspopup="true">
+                Details
+                <!--try to implement-->
+              </button>
+
+              <div class="modal" id="details3Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/plane3.jpg"
+                        alt="Photo of airplane"
+                        title="Commercial A300 Jet"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Commercial A300 Jet</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Original Delta decals included
+                    </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Red Propeller Plane</p>
+              <p class="subtitle is-6">Newly Renovated</p>
+              <figure class="image is-4by3">
+                <img src="/images/plane4.jpg" alt="Photo of airplane" title="Red Propeller Plane" />
+              </figure>
+              <br />
+              <button class="button modal-button" data-target="#details4Modal" aria-haspopup="true">
+                Details
+                <!--try to implement-->
+              </button>
+
+              <div class="modal" id="details4Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/plane4.jpg"
+                        alt="Photo of airplane"
+                        title="Red Propeller Plane"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Red Propeller Plane</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Newly Renovated</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+                <!--try to implement-->
+              </button>
+              <!--Photo by Gary Wann on Unsplash -->
+            </article>
+          </div>
         </div>
 
         <div class="tile is-ancestor">
-
           <div class="tile is-parent">
             <article class="tile is-child notification is-info">
               <p class="title is-5">Commercial 787 Jet</p>
               <p class="subtitle is-6">Original Air Canada decals included</p>
               <figure class="image is-4by3">
-                <img src="/images/plane5.jpg" alt="Photo of airplane" title="Commercial 787 Jet">
+                <img src="/images/plane5.jpg" alt="Photo of airplane" title="Commercial 787 Jet" />
               </figure>
-              <br>
+              <br />
 
               <button class="button modal-button" data-target="#details5Modal" aria-haspopup="true">
                 Details
@@ -537,25 +578,34 @@
                 <div class="card">
                   <div class="card-image">
                     <figure class="image is-4by3">
-                      <img src="/images/plane5.jpg" alt="Photo of airplane" title="Red Propeller Plane">
+                      <img
+                        src="/images/plane5.jpg"
+                        alt="Photo of airplane"
+                        title="Red Propeller Plane"
+                      />
                     </figure>
                   </div>
                   <div class="card-content">
                     <p class="title content" style="color: hsl(0, 0%, 21%);">Commercial 787 Jet</p>
-                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Original Air Canada decals included</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Original Air Canada decals included
+                    </p>
 
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
 
-                      <br>
+                    <br />
                   </div>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
               </div>
 
-              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
                 Buy Now
-
               </button>
 
               <!--Photo by JOSHUA COLEMAN on Unsplash -->
@@ -567,14 +617,13 @@
               <p class="title is-5">Private Jet #2</p>
               <p class="subtitle is-6">N533SR</p>
               <figure class="image is-4by3">
-                <img src="/images/plane6.jpg" alt="Photo of airplane" title="Private Jet #2">
+                <img src="/images/plane6.jpg" alt="Photo of airplane" title="Private Jet #2" />
               </figure>
-              <br>
+              <br />
 
               <button class="button modal-button" data-target="#details6Modal" aria-haspopup="true">
                 Details
               </button>
-
 
               <div class="modal" id="details6Modal">
                 <div class="modal-background"></div>
@@ -582,25 +631,32 @@
                 <div class="card">
                   <div class="card-image">
                     <figure class="image is-4by3">
-                      <img src="/images/plane6.jpg" alt="Photo of airplane" title="Private Jet #2">
+                      <img
+                        src="/images/plane6.jpg"
+                        alt="Photo of airplane"
+                        title="Private Jet #2"
+                      />
                     </figure>
                   </div>
                   <div class="card-content">
                     <p class="title content" style="color: hsl(0, 0%, 21%);">Private Jet #2</p>
                     <p class="subtitle content" style="color: hsl(0, 0%, 40%);">N533SR</p>
 
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
 
-                      <br>
+                    <br />
                   </div>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
               </div>
 
-              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
                 Buy Now
-
               </button>
               <!--Photo by Chandler Cruttenden on Unsplash -->
             </article>
@@ -611,9 +667,9 @@
               <p class="title is-5">Airbus A380</p>
               <p class="subtitle is-6">Choose your own decal</p>
               <figure class="image is-4by3">
-                <img src="/images/plane7.jpg" alt="Photo of airplane" title="Airbus A380">
+                <img src="/images/plane7.jpg" alt="Photo of airplane" title="Airbus A380" />
               </figure>
-              <br>
+              <br />
 
               <button class="button modal-button" data-target="#details7Modal" aria-haspopup="true">
                 Details
@@ -625,27 +681,35 @@
                 <div class="card">
                   <div class="card-image">
                     <figure class="image is-4by3">
-                      <img src="/images/plane7.jpg" alt="Photo of airplane" title="Private Jet #2">
+                      <img
+                        src="/images/plane7.jpg"
+                        alt="Photo of airplane"
+                        title="Private Jet #2"
+                      />
                     </figure>
                   </div>
                   <div class="card-content">
                     <p class="title content" style="color: hsl(0, 0%, 21%);">Airbus A380</p>
-                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Choose your own decal</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Choose your own decal
+                    </p>
 
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
 
-                      <br>
+                    <br />
                   </div>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
               </div>
-              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
                 Buy Now
-
               </button>
               <!--Photo by Chandler Cruttenden on Unsplash -->
-
             </article>
           </div>
 
@@ -654,10 +718,9 @@
               <p class="title is-5">White Propeller Plane</p>
               <p class="subtitle is-6">Old but gold. Newly Renovated</p>
               <figure class="image is-4by3">
-                <img src="/images/plane8.jpg" alt="Photo of airplane" title="Red Propeller Plane">
-
+                <img src="/images/plane8.jpg" alt="Photo of airplane" title="Red Propeller Plane" />
               </figure>
-              <br>
+              <br />
               <button class="button modal-button" data-target="#details8Modal" aria-haspopup="true">
                 Details
               </button>
@@ -668,592 +731,610 @@
                 <div class="card">
                   <div class="card-image">
                     <figure class="image is-4by3">
-                      <img src="/images/plane8.jpg" alt="Photo of airplane" title="White Propeller Plane">
+                      <img
+                        src="/images/plane8.jpg"
+                        alt="Photo of airplane"
+                        title="White Propeller Plane"
+                      />
                     </figure>
                   </div>
                   <div class="card-content">
-                    <p class="title content" style="color: hsl(0, 0%, 21%);">White Propeller Plane</p>
-                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Old but gold. Newly Renovated</p>
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">
+                      White Propeller Plane
+                    </p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Old but gold. Newly Renovated
+                    </p>
 
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
 
-                      <br>
+                    <br />
                   </div>
                 </div>
                 <button class="modal-close is-large" aria-label="close"></button>
               </div>
-              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
                 Buy Now
                 <!--try to implement-->
               </button>
               <!--Photo by Gary Wann on Unsplash -->
-            </div>
             </article>
-        </div>
-          </div>
-      </div>
-    </section>
-
-
-
-
-
-
-    <section class="section hero is-warning" id="helicopters-box">
-
-
-      <br>
-      <p class="title is-3">
-        Helicopters
-      </p>
-      <br>
-
-    <div class="tile is-ancestor">
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">Ambulance Helicopter</p>
-          <p class="subtitle is-6">Private Owner</p>
-          <figure class="image is-4by3">
-            <img src="/images/helicopter1.jpg" alt="Photo of helicopter" title="Ambulance Helicopter">
-          </figure>
-          <br>
-
-          <button class="button modal-button" data-target="#details1ModalHeli" aria-haspopup="true">
-            Details
-          </button>
-
-
-          <div class="modal" id="details1ModalHeli">
-            <div class="modal-background"></div>
-
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="/images/helicopter1.jpg" alt="Photo of helicopter" title="Ambulance Helicopter">
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter</p>
-                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Owner</p>
-
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-
-                  <br>
-              </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-            Buy Now
-
-          </button>
-
-          <!--Photo by JOSHUA COLEMAN on Unsplash -->
-        </article>
-      </div>
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">Yellow Bird</p>
-          <p class="subtitle is-6">San Diego Rescue Corps</p>
-          <figure class="image is-4by3">
-            <img src="/images/helicopter2.jpg" alt="Photo of helicopter" title="Yellow Bird">
-          </figure>
-          <br>
-
-          <button class="button modal-button" data-target="#details2ModalHeli" aria-haspopup="true">
-            Details
-          </button>
-
-
-          <div class="modal" id="details2ModalHeli">
-            <div class="modal-background"></div>
-
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="/images/helicopter2.jpg" alt="Photo of helicopter" title="White Propeller Plane">
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter</p>
-                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Owner</p>
-
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-
-                  <br>
-              </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-
-
-
-
-
-
-
-
-          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-            Buy Now
-
-          </button>
-          <!--Photo by Chandler Cruttenden on Unsplash -->
-        </article>
-      </div>
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">N9902k</p>
-          <p class="subtitle is-6">Original Pipe Survey Decals included</p>
-          <figure class="image is-4by3">
-            <img src="/images/helicopter3.jpg" alt="Photo of helicopter" title="N9902k">
-          </figure>
-          <br>
-
-          <button class="button modal-button" data-target="#details3ModalHeli" aria-haspopup="true">
-            Details
-          </button>
-
-
-          <div class="modal" id="details3ModalHeli">
-            <div class="modal-background"></div>
-
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="/images/helicopter3.jpg" alt="Photo of helicopter" title="N9902k">
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title content" style="color: hsl(0, 0%, 21%);">N9902k</p>
-                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Original Pipe Survey Decals included</p>
-
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-
-                  <br>
-              </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-
-
-
-
-
-
-
-
-          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-            Buy Now
-
-          </button>
-
-        </article>
-      </div>
-
-      <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title is-5">Army Helicopter</p>
-          <p class="subtitle is-6">Missiles Included</p>
-          <figure class="image is-4by3">
-            <img src="/images/helicopter4.jpg" alt="Photo of helicopter" title="Red Propeller Plane">
-
-          </figure>
-          <br>
-          <button class="button modal-button" data-target="#details4ModalHeli" aria-haspopup="true">
-            Details
-          </button>
-
-          <div class="modal" id="details4ModalHeli">
-            <div class="modal-background"></div>
-
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="/images/helicopter4.jpg" alt="Photo of helicopter" title="Army Helicopter">
-                </figure>
-              </div>
-              <div class="card-content">
-                <p class="title content" style="color: hsl(0, 0%, 21%);">Army Helicopter</p>
-                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Missiles Included</p>
-
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris.
-
-                  <br>
-              </div>
-            </div>
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-
-
-
-
-          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-            Buy Now
-            <!--try to implement-->
-
-          </button>
-          <!--Photo by Gary Wann on Unsplash -->
-
-        </div>
-
-
-        </article>
-
-
-
-    </div>
-      </div>
-
-      <div class="tile is-ancestor">
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">Ambulance Helicopter #2</p>
-            <p class="subtitle is-6">Cooler, yet more fragile</p>
-            <figure class="image is-4by3">
-              <img src="/images/helicopter5.jpg" alt="Photo of helicopter" title="Cessna Citation X">
-            </figure>
-            <br>
-
-            <button class="button modal-button" data-target="#details5ModalHeli" aria-haspopup="true">
-              Details
-            </button>
-
-            <div class="modal" id="details5ModalHeli">
-              <div class="modal-background"></div>
-  
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/helicopter5.jpg" alt="Photo of helicopter" title="Ambulance Helicopter #2">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter #2</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Cooler, yet more fragile</p>
-  
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-  
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-
-
-
-
-
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-
-            <!--Photo by JOSHUA COLEMAN on Unsplash -->
-          </article>
-        </div>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">Raga 1414</p>
-            <p class="subtitle is-6">Swiss Helicopter</p>
-            <figure class="image is-4by3">
-              <img src="/images/helicopter6.jpg" alt="Photo of helicopter" title="McDonnell Douglas F/A-18">
-            </figure>
-            <br>
-
-            <button class="button modal-button" data-target="#details6ModalHeli" aria-haspopup="true">
-              Details
-            </button>
-
-
-            <div class="modal" id="details6ModalHeli">
-              <div class="modal-background"></div>
-  
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/helicopter6.jpg" alt="Photo of helicopter" title="Swiss Helicopter">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">Raga 1414</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Swiss Helicopter</p>
-  
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-  
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-
-
-
-
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-            <!--Photo by Chandler Cruttenden on Unsplash -->
-          </article>
-        </div>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">N87ME</p>
-            <p class="subtitle is-6">Children included</p>
-            <figure class="image is-4by3">
-              <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="N87ME">
-            </figure>
-            <br>
-
-            <button class="button modal-button" data-target="#details7ModalHeli" aria-haspopup="true">
-              Details
-              <!--try to implement-->
-            </button>
-
-
-            <div class="modal" id="details7ModalHeli">
-              <div class="modal-background"></div>
-  
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="N87ME">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">N87ME</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Children included</p>
-  
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-  
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-
-
-
-
-
-
-
-
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-            <!--Photo by Chandler Cruttenden on Unsplash -->
-
-          </article>
-        </div>
-
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-info">
-            <p class="title is-5">Ambulance Helicopter #3</p>
-            <p class="subtitle is-6">Adapted for snow</p>
-            <figure class="image is-4by3">
-              <img src="/images/helicopter8.jpg" alt="Photo of helicopter" title="Ambulance Helicopter #3">
-
-            </figure>
-            <br>
-            <button class="button modal-button" data-target="#details8ModalHeli" aria-haspopup="true">
-              Details
-            </button>
-
-
-            <div class="modal" id="details8ModalHeli">
-              <div class="modal-background"></div>
-  
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="/images/helicopter8.jpg" alt="Photo of helicopter" title="Ambulance Helicopter #3">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter #3</p>
-                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Adapted for snow</p>
-  
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.
-  
-                    <br>
-                </div>
-              </div>
-              <button class="modal-close is-large" aria-label="close"></button>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
-              Buy Now
-
-            </button>
-            <!--Photo by Gary Wann on Unsplash -->
-
-          </div>
-
-
-          </article>
-
-
-
-      </div>
-        </div>
-
-
-    </div>
-
-  </section>
-
-
-    <div class="section">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <div class="columns is-gapless">
-              <div class="subtitle">Our Numbers</div>
-            </div>
-
-            <nav class="level">
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Number of planes listed</p>
-                  <p class="title">8</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Number of planes sold</p>
-                  <p class="title">3</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Number of helicopters listed</p>
-                  <p class="title">8</p>
-                </div>
-              </div>
-              <div class="level-item has-text-centered">
-                <div>
-                  <p class="heading">Number of helicopters sold</p>
-                  <p class="title">5</p>
-                </div>
-              </div>
-            </nav>
-
           </div>
         </div>
-      </div>
-    </div>
-  </main>
-</body>
+      </section>
 
-<footer>
+      <section class="section hero is-warning" id="helicopters-box">
+        <br />
+        <p class="title is-3">
+          Helicopters
+        </p>
+        <br />
 
-  <div class="form column is-7" id="subscribe-form">
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Ambulance Helicopter</p>
+              <p class="subtitle is-6">Private Owner</p>
+              <figure class="image is-4by3">
+                <img
+                  src="/images/helicopter1.jpg"
+                  alt="Photo of helicopter"
+                  title="Ambulance Helicopter"
+                />
+              </figure>
+              <br />
 
+              <button
+                class="button modal-button"
+                data-target="#details1ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
 
-    <form action="https://formspree.io/xqkdqvez"
-    method="POST"
-    >
-      <div class="field">
-        <label class="label">Name</label>
-          <input class="input is-small" type="text" name="name" placeholder="Your Name">
-      </div>
+              <div class="modal" id="details1ModalHeli">
+                <div class="modal-background"></div>
 
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-small" type="email" placeholder="Email" name="_replyto" required>
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-exclamation-triangle"></i>
-          </span>
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/helicopter1.jpg"
+                        alt="Photo of helicopter"
+                        title="Ambulance Helicopter"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">
+                      Ambulance Helicopter
+                    </p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Owner</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+
+              <!--Photo by JOSHUA COLEMAN on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Yellow Bird</p>
+              <p class="subtitle is-6">San Diego Rescue Corps</p>
+              <figure class="image is-4by3">
+                <img src="/images/helicopter2.jpg" alt="Photo of helicopter" title="Yellow Bird" />
+              </figure>
+              <br />
+
+              <button
+                class="button modal-button"
+                data-target="#details2ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
+
+              <div class="modal" id="details2ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/helicopter2.jpg"
+                        alt="Photo of helicopter"
+                        title="White Propeller Plane"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">
+                      Ambulance Helicopter
+                    </p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Owner</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">N9902k</p>
+              <p class="subtitle is-6">Original Pipe Survey Decals included</p>
+              <figure class="image is-4by3">
+                <img src="/images/helicopter3.jpg" alt="Photo of helicopter" title="N9902k" />
+              </figure>
+              <br />
+
+              <button
+                class="button modal-button"
+                data-target="#details3ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
+
+              <div class="modal" id="details3ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="/images/helicopter3.jpg" alt="Photo of helicopter" title="N9902k" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">N9902k</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Original Pipe Survey Decals included
+                    </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Army Helicopter</p>
+              <p class="subtitle is-6">Missiles Included</p>
+              <figure class="image is-4by3">
+                <img
+                  src="/images/helicopter4.jpg"
+                  alt="Photo of helicopter"
+                  title="Red Propeller Plane"
+                />
+              </figure>
+              <br />
+              <button
+                class="button modal-button"
+                data-target="#details4ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
+
+              <div class="modal" id="details4ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/helicopter4.jpg"
+                        alt="Photo of helicopter"
+                        title="Army Helicopter"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Army Helicopter</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Missiles Included
+                    </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+                <!--try to implement-->
+              </button>
+              <!--Photo by Gary Wann on Unsplash -->
+            </article>
+          </div>
+        </div>
+
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Ambulance Helicopter #2</p>
+              <p class="subtitle is-6">Cooler, yet more fragile</p>
+              <figure class="image is-4by3">
+                <img
+                  src="/images/helicopter5.jpg"
+                  alt="Photo of helicopter"
+                  title="Cessna Citation X"
+                />
+              </figure>
+              <br />
+
+              <button
+                class="button modal-button"
+                data-target="#details5ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
+
+              <div class="modal" id="details5ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/helicopter5.jpg"
+                        alt="Photo of helicopter"
+                        title="Ambulance Helicopter #2"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">
+                      Ambulance Helicopter #2
+                    </p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Cooler, yet more fragile
+                    </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+
+              <!--Photo by JOSHUA COLEMAN on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Raga 1414</p>
+              <p class="subtitle is-6">Swiss Helicopter</p>
+              <figure class="image is-4by3">
+                <img
+                  src="/images/helicopter6.jpg"
+                  alt="Photo of helicopter"
+                  title="McDonnell Douglas F/A-18"
+                />
+              </figure>
+              <br />
+
+              <button
+                class="button modal-button"
+                data-target="#details6ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
+
+              <div class="modal" id="details6ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/helicopter6.jpg"
+                        alt="Photo of helicopter"
+                        title="Swiss Helicopter"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Raga 1414</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Swiss Helicopter</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">N87ME</p>
+              <p class="subtitle is-6">Children included</p>
+              <figure class="image is-4by3">
+                <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="N87ME" />
+              </figure>
+              <br />
+
+              <button
+                class="button modal-button"
+                data-target="#details7ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+                <!--try to implement-->
+              </button>
+
+              <div class="modal" id="details7ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="N87ME" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">N87ME</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">
+                      Children included
+                    </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+              <!--Photo by Chandler Cruttenden on Unsplash -->
+            </article>
+          </div>
+
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Ambulance Helicopter #3</p>
+              <p class="subtitle is-6">Adapted for snow</p>
+              <figure class="image is-4by3">
+                <img
+                  src="/images/helicopter8.jpg"
+                  alt="Photo of helicopter"
+                  title="Ambulance Helicopter #3"
+                />
+              </figure>
+              <br />
+              <button
+                class="button modal-button"
+                data-target="#details8ModalHeli"
+                aria-haspopup="true"
+              >
+                Details
+              </button>
+
+              <div class="modal" id="details8ModalHeli">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img
+                        src="/images/helicopter8.jpg"
+                        alt="Photo of helicopter"
+                        title="Ambulance Helicopter #3"
+                      />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">
+                      Ambulance Helicopter #3
+                    </p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Adapted for snow</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis
+                    mauris.
+
+                    <br />
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
+              <button
+                class="button is-primary modal-button"
+                data-target="#loginModal"
+                aria-haspopup="true"
+              >
+                Buy Now
+              </button>
+              <!--Photo by Gary Wann on Unsplash -->
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="columns is-gapless">
+                <div class="subtitle">Our Numbers</div>
+              </div>
+
+              <nav class="level">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Number of planes listed</p>
+                    <p class="title">8</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Number of planes sold</p>
+                    <p class="title">3</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Number of helicopters listed</p>
+                    <p class="title">8</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Number of helicopters sold</p>
+                    <p class="title">5</p>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
 
+      <footer>
+        <div class="form column is-7" id="subscribe-form">
+          <form action="https://formspree.io/xqkdqvez" method="POST">
+            <div class="field">
+              <label class="label">Name</label>
+              <input class="input is-small" type="text" name="name" placeholder="Your Name" />
+            </div>
 
-      <div class="field">
-        <div class="control is-small">
-          <label class="checkbox">
-            <input type="checkbox">
-            I agree to the <a href="#">terms and conditions</a>
-          </label>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input is-small"
+                  type="email"
+                  placeholder="Email"
+                  name="_replyto"
+                  required
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control is-small">
+                <label class="checkbox">
+                  <input type="checkbox" />
+                  I agree to the <a href="#">terms and conditions</a>
+                </label>
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control">
+                <button type="submit">Subscribe!</button>
+              </div>
+
+              <!-- your other form fields go here -->
+            </div>
+          </form>
         </div>
-      </div>
 
-
-      <div class="field is-grouped">
-        <div class="control">
-          <button type="submit">Subscribe!</button>
-        </div>
-
-
-        <!-- your other form fields go here -->
-
-      </div>
-
-    </form>
-  </div>
-
-<section class="hero is-danger">
-  <div class="has-text-centered">
-    <span>Because buying, selling and renting used flying vehicles should be as easy buying
-      a pint of beer...</span>
-  </div>
-</section>
-
-
-
-
-
-</footer>
-
+        <section class="hero is-danger">
+          <div class="has-text-centered">
+            <span
+              >Because buying, selling and renting used flying vehicles should be as easy buying a
+              pint of beer...</span
+            >
+          </div>
+        </section>
+      </footer>
+    </main>
+  </body>
 </html>

@@ -18,9 +18,6 @@
    * and Dependencies - All countries in Asia" etc.
    */
 
-
-
-
   function setupMenuHandlers() {
     document.querySelectorAll('.modal-button').forEach(function(el) {
       el.addEventListener('click', function() {
@@ -32,122 +29,108 @@
       });
     });
 
-
-  // Textbox on radio option
+    // Textbox on radio option
     $(function() {
       $('input[name="answer"]').on('click', function() {
-          if ($(this).val() == 'orderproblem') {
-              $('#orderproblemtext').show();
-          }
-          else {
-              $('#orderproblemtext').hide();
-          }
+        if ($(this).val() === 'orderproblem') {
+          $('#orderproblemtext').show();
+        } else {
+          $('#orderproblemtext').hide();
+        }
       });
-  });
+    });
 
+    // Close mobile & tablet menu on item click
+    $('.navbar-item').each(function() {
+      $(this).click(function() {
+        if ($('#navbar-burger').hasClass('is-active')) {
+          $('#navbar-burger').removeClass('is-active');
+          $('#navbar-menu-id').removeClass('is-active');
+        }
+      });
+    });
 
-  // Close mobile & tablet menu on item click
-  $('.navbar-item').each(function(e) {
-    $(this).click(function(){
-      if($('#navbar-burger').hasClass('is-active')){
+    // Open or Close mobile & tablet menu
+    $('#navbar-burger').click(function() {
+      if ($('#navbar-burger').hasClass('is-active')) {
         $('#navbar-burger').removeClass('is-active');
         $('#navbar-menu-id').removeClass('is-active');
+      } else {
+        $('#navbar-burger').addClass('is-active');
+        $('#navbar-menu-id').addClass('is-active');
       }
     });
-  });
 
-  // Open or Close mobile & tablet menu
-  $('#navbar-burger').click(function () {
-    if($('#navbar-burger').hasClass('is-active')){
-      $('#navbar-burger').removeClass('is-active');
-      $('#navbar-menu-id').removeClass('is-active');
-    }else {
-      $('#navbar-burger').addClass('is-active');
-      $('#navbar-menu-id').addClass('is-active');
-    }
-  });
+    $(document).ready(function() {
+      $('#select').on('change', function() {
+        switch (this.value) {
+          case 'none':
+            $('#airplanes-box').hide();
+            $('#helicopters-box').hide();
+            $('#subscribe-form').hide();
 
+            break;
+          case 'all':
+            $('#airplanes-box').show();
+            $('#helicopters-box').show();
+            $('#subscribe-form').show();
 
-  $(document).ready(function(){
-    $('#select').on('change', function() {
-      switch(this.value){
-        case 'none':
-          $("#airplanes-box").hide();
-          $("#helicopters-box").hide();
-          $("#subscribe-form").hide();
+            break;
+          case 'airplanes':
+            $('#airplanes-box').show();
+            $('#helicopters-box').hide();
+            $('#subscribe-form').show();
 
+            break;
+          case 'helicopters':
+            $('#airplanes-box').hide();
+            $('#helicopters-box').show();
+            $('#subscribe-form').show();
 
-          break;
-        case 'all':
-          $("#airplanes-box").show();
-          $("#helicopters-box").show();
-          $("#subscribe-form").show();
-
-          break;
-        case 'airplanes':
-          $("#airplanes-box").show();
-          $("#helicopters-box").hide();
-          $("#subscribe-form").show();
-
-          break;
-        case 'helicopters':
-          $("#airplanes-box").hide();
-          $("#helicopters-box").show();
-          $("#subscribe-form").show();
-
-          break;
-       }
+            break;
+        }
+      });
     });
-  });
 
+    document.addEventListener('DOMContentLoaded', function() {
+      // Dropdowns
 
-  document.addEventListener('DOMContentLoaded', function () {
+      var $dropdowns = getAll('.dropdown:not(.is-hoverable)');
 
-    // Dropdowns
-
-    var $dropdowns = getAll('.dropdown:not(.is-hoverable)');
-
-    if ($dropdowns.length > 0) {
-      $dropdowns.forEach(function ($el) {
-        $el.addEventListener('click', function (event) {
-          event.stopPropagation();
-          $el.classList.toggle('is-active');
+      if ($dropdowns.length > 0) {
+        $dropdowns.forEach(function($el) {
+          $el.addEventListener('click', function(event) {
+            event.stopPropagation();
+            $el.classList.toggle('is-active');
+          });
         });
+
+        document.addEventListener('click', function() {
+          closeDropdowns();
+        });
+      }
+
+      function closeDropdowns() {
+        $dropdowns.forEach(function($el) {
+          $el.classList.remove('is-active');
+        });
+      }
+
+      // Close dropdowns if ESC pressed
+      document.addEventListener('keydown', function(event) {
+        var e = event || window.event;
+        if (e.keyCode === 27) {
+          closeDropdowns();
+        }
       });
 
-      document.addEventListener('click', function (event) {
-        closeDropdowns();
-      });
-    }
+      // Functions
 
-    function closeDropdowns() {
-      $dropdowns.forEach(function ($el) {
-        $el.classList.remove('is-active');
-      });
-    }
-
-    // Close dropdowns if ESC pressed
-    document.addEventListener('keydown', function (event) {
-      var e = event || window.event;
-      if (e.keyCode === 27) {
-        closeDropdowns();
+      function getAll(selector) {
+        return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
       }
     });
-
-    // Functions
-
-    function getAll(selector) {
-      return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-    }
-  });
-
-
-
-
   }
 
-
-
   window.onload = setupMenuHandlers;
-
 })();

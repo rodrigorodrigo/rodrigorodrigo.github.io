@@ -9,8 +9,20 @@
   <title>PayN'Fly</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
+
+
+<style>
+  #airplanes-box{
+    display:none;
+  }
+  #helicopters-box{
+    display:none;
+  }
+</style>
 
 </head>
 
@@ -31,6 +43,7 @@
       </a>
     </div>
 
+    
 
 
 <div class="navbar-burger" id="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
@@ -40,25 +53,19 @@
         </div>
 
 
-
-
-
-
-
-
-        
-
-      <div id="navbar-menu-id" class="navbar-menu">
-        <div class="navbar-end">
-<h2 class="subtitle">Select aircraft type</h2>
-          <div class="dropdown is-primary">
-            <select name="section">
-              <option value="all" id="all" onSelect="document.querySelector('#').classList.toggle('is-hidden');"><a href="#">All</a></option>
-              <hr class="dropdown-divider">
-              <option value="airplanes" id="airplanes" onSelect="document.querySelector('#airplanes-box').classList.remove('is-hidden');">Airplanes</option>
-              <option value="helicopters" id="helicopters" onSelect="document.querySelector('#helicopters-box').classList.remove('is-hidden');"><a href="#"></a>Helicopters</a></option>
-            </select>
-          </div>
+        <div id="navbar-menu-id" class="navbar-menu">
+          <div class="navbar-end">
+  <h2 class="subtitle">Select aircraft type</h2>
+            <div class="dropdown is-active is-primary">
+              <select name="section" id="select">
+                <option class="is-active" value="none" id="none">Select</option>
+                <option value="all" id="all">All</option>
+                <hr>
+                <option value="airplanes" id="airplanes">Airplanes</option>
+                <option value="helicopters" id="helicopters">Helicopters</option>
+              </select>
+            </div>
+  
 
         <a class="navbar-item" href="https://instagram.com/" target="_blank">
           <span class="icon">
@@ -212,7 +219,7 @@
   <main>
 
 
-    <section class="section hero is-danger is-hidden" id="airplanes-box">
+    <section class="section hero is-danger" id="airplanes-box">
 
 
         <br>
@@ -592,7 +599,7 @@
 
 
 
-    <section class="section hero is-warning is-hidden" id="helicopters-box">
+    <section class="section hero is-warning" id="helicopters-box">
 
 
       <br>
@@ -1087,7 +1094,7 @@
 
 <footer>
 
-  <div class="form column is-7 is-hidden" id="subscribe-form">
+  <div class="form column is-7" id="subscribe-form">
 
 
     <form action="https://formspree.io/xqkdqvez"

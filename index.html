@@ -32,14 +32,27 @@
     </div>
 
 
-<div class="navbar-burger" id="navbar-burger-id" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+
+<div class="navbar-burger" id="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
           <span></span>
           <span></span>
           <span></span>
         </div>
 
+
+
+
+
       <div id="navbar-menu-id" class="navbar-menu">
         <div class="navbar-end">
+<h2 class="subtitle">Select aircraft type</h2>
+          <div class="select is-primary">
+            <select name="section">
+              <option value="all" id="all"><a href="#">All</a></option>
+              <option value="airplanes" id="airplanes" onChange="document.querySelector('#airplanes-box').classList.toggle('show');">Airplanes</option>
+              <option value="helicopters" id="helicopters"><a href="#"></a>Helicopters</a></option>
+            </select>
+          </div>
 
         <a class="navbar-item" href="https://instagram.com/" target="_blank">
           <span class="icon">
@@ -101,7 +114,7 @@
                             <option value="Other">Other</option>
                           </select>
                         </div>
-                    <br><br>
+                    <br>
                         <div class="field">
                           <label class="label">Message</label>
 
@@ -191,17 +204,17 @@
     </div>
   </nav>
   <main>
-    <section class="section hero is-danger">
 
 
-      <div>
+    <section class="section hero is-danger" id="airplanes-box">
+
+
         <br>
         <p class="title is-3">
           Airplanes
         </p>
         <br>
 
-      </div>
       <div class="tile is-ancestor">
 
         <div class="tile is-parent">
@@ -213,11 +226,11 @@
             </figure>
             <br>
 
-            <button class="button">
+            <button class="button modal-button" data-target="#details1Modal" aria-haspopup="true">
               Details
             </button>
 
-            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
             </button>
@@ -235,11 +248,11 @@
             </figure>
             <br>
 
-            <button class="button">
+            <button class="button modal-button" data-target="#details2Modal" aria-haspopup="true">
               Details
             </button>
 
-            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
             </button>
@@ -250,17 +263,17 @@
         <div class="tile is-parent">
           <article class="tile is-child notification is-info">
             <p class="title is-5">Commercial A300 Jet</p>
-            <p class="subtitle is-6">Original Delta Decals included</p>
+            <p class="subtitle is-6">Original Delta decals included</p>
             <figure class="image is-4by3">
               <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet">
             </figure>
             <br>
 
-            <button class="button">
+            <button class="button modal-button" data-target="#details3Modal" aria-haspopup="true">
               Details
               <!--try to implement-->
             </button>
-            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
             </button>
@@ -278,81 +291,88 @@
 
             </figure>
             <br>
-            <button class="button">
+            <button class="button modal-button" data-target="#details4Modal" aria-haspopup="true">
               Details
               <!--try to implement-->
             </button>
-            <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
               <!--try to implement-->
 
             </button>
             <!--Photo by Gary Wann on Unsplash -->
+
+          </div>
+
+
           </article>
-        </div>
+
 
 
       </div>
-    </section>
-
-    <br>
-
-    <section class="section hero is-rounded is-warning">
-      <p>
-        <div>
-          <p class="title is-3">
-            Helicopters
-          </p>
-          <br>
-
         </div>
+
         <div class="tile is-ancestor">
 
           <div class="tile is-parent">
-            <article class="tile is-child notification is-success">
-              <p class="title">Cessna Citation X</p>
-              <p class="subtitle">Optional subtitle?</p>
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Commercial 787 Jet</p>
+              <p class="subtitle is-6">Original Air Canada decals included</p>
               <figure class="image is-4by3">
-                <img src="/images/plane1.jpg" alt="plane1">
+                <img src="/images/plane5.jpg" alt="Photo of airplane" title="Commercial 787 Jet">
               </figure>
-              <button class="button">
+              <br>
+
+              <button class="button modal-button" data-target="#details5Modal" aria-haspopup="true">
                 Details
-                <!--try to implement-->
               </button>
-              <button class="button is-primary modal-button" data-target="#myModal" aria-haspopup="true">
+
+              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
                 Buy Now
-                <!--try to implement-->
 
               </button>
+
               <!--Photo by JOSHUA COLEMAN on Unsplash -->
             </article>
           </div>
 
           <div class="tile is-parent">
-            <article class="tile is-child notification is-success">
-              <p class="title">U.S NAVY Squadron Jet</p>
-              <p class="subtitle">McDonnell Douglas F/A-18</p>
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">Private Jet #2</p>
+              <p class="subtitle is-6">N533SR</p>
               <figure class="image is-4by3">
-                <img src="/images/plane2.jpg" alt="plane2">
+                <img src="/images/plane6.jpg" alt="Photo of airplane" title="Private Jet #2">
               </figure>
-              <button class="button">
+              <br>
+
+              <button class="button modal-button" data-target="#details6Modal" aria-haspopup="true">
                 Details
-                <!--try to implement-->
+              </button>
+
+              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+                Buy Now
+
               </button>
               <!--Photo by Chandler Cruttenden on Unsplash -->
             </article>
           </div>
 
           <div class="tile is-parent">
-            <article class="tile is-child notification is-success">
-              <p class="title">Commercial A300 Jet</p>
-              <p class="subtitle">Original Delta Decals included</p>
+            <article class="tile is-child notification is-info">
+              <p class="title is-5"></p>Airbus A380</p>
+              <p class="subtitle is-6">Choose your own decal</p>
               <figure class="image is-4by3">
-                <img src="/images/plane3.jpg" alt="plane3">
+                <img src="/images/plane7.jpg" alt="Photo of airplane" title="Airbus A380">
               </figure>
-              <button class="button">
+              <br>
+
+              <button class="button modal-button" data-target="#details7Modal" aria-haspopup="true">
                 Details
                 <!--try to implement-->
+              </button>
+              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+                Buy Now
+
               </button>
               <!--Photo by Chandler Cruttenden on Unsplash -->
 
@@ -360,24 +380,277 @@
           </div>
 
           <div class="tile is-parent">
-            <article class="tile is-child notification is-success">
-              <p class="title">Red Propeller Plane</p>
-              <p class="subtitle">Newly Renovated</p>
+            <article class="tile is-child notification is-info">
+              <p class="title is-5">White Propeller Plane</p>
+              <p class="subtitle is-6">Old but gold. Newly Renovated</p>
               <figure class="image is-4by3">
-                <img src="/images/plane4.jpg" alt="plane4">
+                <img src="/images/plane8.jpg" alt="Photo of airplane" title="Red Propeller Plane">
+
               </figure>
-              <button class="button">
+              <br>
+              <button class="button modal-button" data-target="#details8Modal" aria-haspopup="true">
                 Details
                 <!--try to implement-->
+              </button>
+              <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+                Buy Now
+                <!--try to implement-->
+
               </button>
               <!--Photo by Gary Wann on Unsplash -->
+
+            </div>
+
+
             </article>
-          </div>
+
 
 
         </div>
+          </div>
+
+
+      </div>
+
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="section hero is-warning" id="helicopters-box">
+
+
+      <br>
+      <p class="title is-3">
+        Helicopters
+      </p>
+      <br>
+
+    <div class="tile is-ancestor">
+
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title is-5">Ambulance Helicopter</p>
+          <p class="subtitle is-6">Private Owner</p>
+          <figure class="image is-4by3">
+            <img src="/images/helicopter1.jpg" alt="Photo of helicopter" title="Ambulance Helicopter">
+          </figure>
+          <br>
+
+          <button class="button modal-button" data-target="#details1Modal" aria-haspopup="true">
+            Details
+          </button>
+
+          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+            Buy Now
+
+          </button>
+
+          <!--Photo by JOSHUA COLEMAN on Unsplash -->
+        </article>
+      </div>
+
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title is-5">Yellow Bird</p>
+          <p class="subtitle is-6">San Diego Rescue Corps</p>
+          <figure class="image is-4by3">
+            <img src="/images/helicopter2.jpg" alt="Photo of helicopter" title="Yellow Bird">
+          </figure>
+          <br>
+
+          <button class="button modal-button" data-target="#details2Modal" aria-haspopup="true">
+            Details
+          </button>
+
+          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+            Buy Now
+
+          </button>
+          <!--Photo by Chandler Cruttenden on Unsplash -->
+        </article>
+      </div>
+
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title is-5">N9902k</p>
+          <p class="subtitle is-6">Original Pipe Survey Decals included</p>
+          <figure class="image is-4by3">
+            <img src="/images/helicopter3.jpg" alt="Photo of helicopter" title="N9902k">
+          </figure>
+          <br>
+
+          <button class="button modal-button" data-target="#details3Modal" aria-haspopup="true">
+            Details
+            <!--try to implement-->
+          </button>
+          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+            Buy Now
+
+          </button>
+          <!--Photo by Chandler Cruttenden on Unsplash -->
+
+        </article>
+      </div>
+
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title is-5">Army Helicopter</p>
+          <p class="subtitle is-6">Missiles Included</p>
+          <figure class="image is-4by3">
+            <img src="/images/helicopter4.jpg" alt="Photo of helicopter" title="Red Propeller Plane">
+
+          </figure>
+          <br>
+          <button class="button modal-button" data-target="#details4Modal" aria-haspopup="true">
+            Details
+            <!--try to implement-->
+          </button>
+          <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+            Buy Now
+            <!--try to implement-->
+
+          </button>
+          <!--Photo by Gary Wann on Unsplash -->
+
+        </div>
+
+
+        </article>
+
+
+
+    </div>
+      </div>
+
+      <div class="tile is-ancestor">
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Ambulance Helicopter #2</p>
+            <p class="subtitle is-6">Cooler, yet more fragile</p>
+            <figure class="image is-4by3">
+              <img src="/images/helicopter5.jpg" alt="Photo of helicopter" title="Cessna Citation X">
+            </figure>
+            <br>
+
+            <button class="button modal-button" data-target="#details5Modal" aria-haspopup="true">
+              Details
+            </button>
+
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              Buy Now
+
+            </button>
+
+            <!--Photo by JOSHUA COLEMAN on Unsplash -->
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Raga 1414</p>
+            <p class="subtitle is-6">Swiss Helicopter</p>
+            <figure class="image is-4by3">
+              <img src="/images/helicopter6.jpg" alt="Photo of helicopter" title="McDonnell Douglas F/A-18">
+            </figure>
+            <br>
+
+            <button class="button modal-button" data-target="#details6Modal" aria-haspopup="true">
+              Details
+            </button>
+
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              Buy Now
+
+            </button>
+            <!--Photo by Chandler Cruttenden on Unsplash -->
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">N87ME</p>
+            <p class="subtitle is-6">Children included</p>
+            <figure class="image is-4by3">
+              <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="Commercial A300 Jet">
+            </figure>
+            <br>
+
+            <button class="button modal-button" data-target="#details7Modal" aria-haspopup="true">
+              Details
+              <!--try to implement-->
+            </button>
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              Buy Now
+
+            </button>
+            <!--Photo by Chandler Cruttenden on Unsplash -->
+
+          </article>
+        </div>
+
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title is-5">Ambulance Helicopter #3</p>
+            <p class="subtitle is-6">Adapted for snow</p>
+            <figure class="image is-4by3">
+              <img src="/images/helicopter8.jpg" alt="Photo of helicopter" title="Red Propeller Plane">
+
+            </figure>
+            <br>
+            <button class="button modal-button" data-target="#details8Modal" aria-haspopup="true">
+              Details
+              <!--try to implement-->
+            </button>
+            <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
+              Buy Now
+              <!--try to implement-->
+
+            </button>
+            <!--Photo by Gary Wann on Unsplash -->
+
+          </div>
+
+
+          </article>
+
+
+
+      </div>
+        </div>
+
+
+    </div>
+
+  </section>
 
 
     <div class="section">
@@ -514,7 +787,7 @@
 
 <footer>
 
-  <div class="form column is-7">
+  <div class="form column is-7 is-hidden">
 
 
     <form action="https://formspree.io/xqkdqvez"

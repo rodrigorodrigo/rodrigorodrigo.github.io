@@ -43,14 +43,20 @@
 
 
 
+
+
+
+        
+
       <div id="navbar-menu-id" class="navbar-menu">
         <div class="navbar-end">
 <h2 class="subtitle">Select aircraft type</h2>
-          <div class="select is-primary">
+          <div class="dropdown is-primary">
             <select name="section">
-              <option value="all" id="all"><a href="#">All</a></option>
-              <option value="airplanes" id="airplanes" onChange="document.querySelector('#airplanes-box').classList.toggle('show');">Airplanes</option>
-              <option value="helicopters" id="helicopters"><a href="#"></a>Helicopters</a></option>
+              <option value="all" id="all" onSelect="document.querySelector('#').classList.toggle('is-hidden');"><a href="#">All</a></option>
+              <hr class="dropdown-divider">
+              <option value="airplanes" id="airplanes" onSelect="document.querySelector('#airplanes-box').classList.remove('is-hidden');">Airplanes</option>
+              <option value="helicopters" id="helicopters" onSelect="document.querySelector('#helicopters-box').classList.remove('is-hidden');"><a href="#"></a>Helicopters</a></option>
             </select>
           </div>
 
@@ -206,7 +212,7 @@
   <main>
 
 
-    <section class="section hero is-danger" id="airplanes-box">
+    <section class="section hero is-danger is-hidden" id="airplanes-box">
 
 
         <br>
@@ -230,6 +236,29 @@
               Details
             </button>
 
+            <div class="modal" id="details1Modal">
+              <div class="modal-background"></div>
+
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/plane1.jpg" alt="Photo of airplane" title="Cessna Citation X">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">Cessna Citation X</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Jet</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
@@ -252,6 +281,29 @@
               Details
             </button>
 
+
+            <div class="modal" id="details2Modal">
+              <div class="modal-background"></div>
+
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/plane2.jpg" alt="Photo of airplane" title="McDonnell Douglas F/A-1">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">McDonnell Douglas F/A-18</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">U.S NAVY Squadron Jet</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
@@ -273,6 +325,29 @@
               Details
               <!--try to implement-->
             </button>
+
+            <div class="modal" id="details3Modal">
+              <div class="modal-background"></div>
+
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/plane3.jpg" alt="Photo of airplane" title="Commercial A300 Jet">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">Commercial A300 Jet</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Original Delta decals included</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
@@ -295,6 +370,29 @@
               Details
               <!--try to implement-->
             </button>
+
+            <div class="modal" id="details4Modal">
+              <div class="modal-background"></div>
+
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/plane4.jpg" alt="Photo of airplane" title="Red Propeller Plane">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">Red Propeller Plane</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Newly Renovated</p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
               <!--try to implement-->
@@ -306,8 +404,6 @@
 
 
           </article>
-
-
 
       </div>
         </div>
@@ -326,6 +422,28 @@
               <button class="button modal-button" data-target="#details5Modal" aria-haspopup="true">
                 Details
               </button>
+
+              <div class="modal" id="details5Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="/images/plane5.jpg" alt="Photo of airplane" title="Red Propeller Plane">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Commercial 787 Jet</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Original Air Canada decals included</p>
+
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris.
+
+                      <br>
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
 
               <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
                 Buy Now
@@ -349,6 +467,29 @@
                 Details
               </button>
 
+
+              <div class="modal" id="details6Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="/images/plane6.jpg" alt="Photo of airplane" title="Private Jet #2">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Private Jet #2</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">N533SR</p>
+
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris.
+
+                      <br>
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
+
               <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
                 Buy Now
 
@@ -359,7 +500,7 @@
 
           <div class="tile is-parent">
             <article class="tile is-child notification is-info">
-              <p class="title is-5"></p>Airbus A380</p>
+              <p class="title is-5">Airbus A380</p>
               <p class="subtitle is-6">Choose your own decal</p>
               <figure class="image is-4by3">
                 <img src="/images/plane7.jpg" alt="Photo of airplane" title="Airbus A380">
@@ -368,8 +509,29 @@
 
               <button class="button modal-button" data-target="#details7Modal" aria-haspopup="true">
                 Details
-                <!--try to implement-->
               </button>
+
+              <div class="modal" id="details7Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="/images/plane7.jpg" alt="Photo of airplane" title="Private Jet #2">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">Airbus A380</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Choose your own decal</p>
+
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris.
+
+                      <br>
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
               <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
                 Buy Now
 
@@ -390,28 +552,39 @@
               <br>
               <button class="button modal-button" data-target="#details8Modal" aria-haspopup="true">
                 Details
-                <!--try to implement-->
               </button>
+
+              <div class="modal" id="details8Modal">
+                <div class="modal-background"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="/images/plane8.jpg" alt="Photo of airplane" title="White Propeller Plane">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <p class="title content" style="color: hsl(0, 0%, 21%);">White Propeller Plane</p>
+                    <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Old but gold. Newly Renovated</p>
+
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris.
+
+                      <br>
+                  </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+              </div>
               <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
                 Buy Now
                 <!--try to implement-->
-
               </button>
               <!--Photo by Gary Wann on Unsplash -->
-
             </div>
-
-
             </article>
-
-
-
         </div>
           </div>
-
-
       </div>
-
     </section>
 
 
@@ -419,32 +592,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="section hero is-warning" id="helicopters-box">
+    <section class="section hero is-warning is-hidden" id="helicopters-box">
 
 
       <br>
@@ -464,9 +612,46 @@
           </figure>
           <br>
 
-          <button class="button modal-button" data-target="#details1Modal" aria-haspopup="true">
+          <button class="button modal-button" data-target="#details1ModalHeli" aria-haspopup="true">
             Details
           </button>
+
+
+          <div class="modal" id="details1ModalHeli">
+            <div class="modal-background"></div>
+
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/images/helicopter1.jpg" alt="Photo of helicopter" title="Ambulance Helicopter">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter</p>
+                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Owner</p>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+
+                  <br>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
             Buy Now
@@ -486,9 +671,39 @@
           </figure>
           <br>
 
-          <button class="button modal-button" data-target="#details2Modal" aria-haspopup="true">
+          <button class="button modal-button" data-target="#details2ModalHeli" aria-haspopup="true">
             Details
           </button>
+
+
+          <div class="modal" id="details2ModalHeli">
+            <div class="modal-background"></div>
+
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/images/helicopter2.jpg" alt="Photo of helicopter" title="White Propeller Plane">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter</p>
+                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Private Owner</p>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+
+                  <br>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+
+
+
+
+
+
+
 
           <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
             Buy Now
@@ -507,15 +722,44 @@
           </figure>
           <br>
 
-          <button class="button modal-button" data-target="#details3Modal" aria-haspopup="true">
+          <button class="button modal-button" data-target="#details3ModalHeli" aria-haspopup="true">
             Details
-            <!--try to implement-->
           </button>
+
+
+          <div class="modal" id="details3ModalHeli">
+            <div class="modal-background"></div>
+
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/images/helicopter3.jpg" alt="Photo of helicopter" title="N9902k">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title content" style="color: hsl(0, 0%, 21%);">N9902k</p>
+                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Original Pipe Survey Decals included</p>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+
+                  <br>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+
+
+
+
+
+
+
+
           <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
             Buy Now
 
           </button>
-          <!--Photo by Chandler Cruttenden on Unsplash -->
 
         </article>
       </div>
@@ -529,10 +773,35 @@
 
           </figure>
           <br>
-          <button class="button modal-button" data-target="#details4Modal" aria-haspopup="true">
+          <button class="button modal-button" data-target="#details4ModalHeli" aria-haspopup="true">
             Details
-            <!--try to implement-->
           </button>
+
+          <div class="modal" id="details4ModalHeli">
+            <div class="modal-background"></div>
+
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/images/helicopter4.jpg" alt="Photo of helicopter" title="Army Helicopter">
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title content" style="color: hsl(0, 0%, 21%);">Army Helicopter</p>
+                <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Missiles Included</p>
+
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus nec iaculis mauris.
+
+                  <br>
+              </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+
+
+
+
           <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
             Buy Now
             <!--try to implement-->
@@ -561,9 +830,37 @@
             </figure>
             <br>
 
-            <button class="button modal-button" data-target="#details5Modal" aria-haspopup="true">
+            <button class="button modal-button" data-target="#details5ModalHeli" aria-haspopup="true">
               Details
             </button>
+
+            <div class="modal" id="details5ModalHeli">
+              <div class="modal-background"></div>
+  
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/helicopter5.jpg" alt="Photo of helicopter" title="Ambulance Helicopter #2">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter #2</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Cooler, yet more fragile</p>
+  
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+  
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+
+
+
+
+
 
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
@@ -583,9 +880,37 @@
             </figure>
             <br>
 
-            <button class="button modal-button" data-target="#details6Modal" aria-haspopup="true">
+            <button class="button modal-button" data-target="#details6ModalHeli" aria-haspopup="true">
               Details
             </button>
+
+
+            <div class="modal" id="details6ModalHeli">
+              <div class="modal-background"></div>
+  
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/helicopter6.jpg" alt="Photo of helicopter" title="Swiss Helicopter">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">Raga 1414</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Swiss Helicopter</p>
+  
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+  
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+
+
+
+
 
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
@@ -600,14 +925,47 @@
             <p class="title is-5">N87ME</p>
             <p class="subtitle is-6">Children included</p>
             <figure class="image is-4by3">
-              <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="Commercial A300 Jet">
+              <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="N87ME">
             </figure>
             <br>
 
-            <button class="button modal-button" data-target="#details7Modal" aria-haspopup="true">
+            <button class="button modal-button" data-target="#details7ModalHeli" aria-haspopup="true">
               Details
               <!--try to implement-->
             </button>
+
+
+            <div class="modal" id="details7ModalHeli">
+              <div class="modal-background"></div>
+  
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/helicopter7.jpg" alt="Photo of helicopter" title="N87ME">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">N87ME</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Children included</p>
+  
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+  
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+
+
+
+
+
+
+
+
+
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
 
@@ -622,17 +980,49 @@
             <p class="title is-5">Ambulance Helicopter #3</p>
             <p class="subtitle is-6">Adapted for snow</p>
             <figure class="image is-4by3">
-              <img src="/images/helicopter8.jpg" alt="Photo of helicopter" title="Red Propeller Plane">
+              <img src="/images/helicopter8.jpg" alt="Photo of helicopter" title="Ambulance Helicopter #3">
 
             </figure>
             <br>
-            <button class="button modal-button" data-target="#details8Modal" aria-haspopup="true">
+            <button class="button modal-button" data-target="#details8ModalHeli" aria-haspopup="true">
               Details
-              <!--try to implement-->
             </button>
+
+
+            <div class="modal" id="details8ModalHeli">
+              <div class="modal-background"></div>
+  
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/images/helicopter8.jpg" alt="Photo of helicopter" title="Ambulance Helicopter #3">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <p class="title content" style="color: hsl(0, 0%, 21%);">Ambulance Helicopter #3</p>
+                  <p class="subtitle content" style="color: hsl(0, 0%, 40%);">Adapted for snow</p>
+  
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris.
+  
+                    <br>
+                </div>
+              </div>
+              <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
             <button class="button is-primary modal-button" data-target="#loginModal" aria-haspopup="true">
               Buy Now
-              <!--try to implement-->
 
             </button>
             <!--Photo by Gary Wann on Unsplash -->
@@ -664,120 +1054,30 @@
             <nav class="level">
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Numbers of planes listed</p>
-                  <p class="title">16</p>
+                  <p class="heading">Number of planes listed</p>
+                  <p class="title">8</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Number of planes sold</p>
-                  <p class="title">7</p>
+                  <p class="title">3</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
-                  <p class="heading">Numbers of helicopters listed</p>
-                  <p class="title">6</p>
+                  <p class="heading">Number of helicopters listed</p>
+                  <p class="title">8</p>
                 </div>
               </div>
               <div class="level-item has-text-centered">
                 <div>
                   <p class="heading">Number of helicopters sold</p>
-                  <p class="title">2</p>
+                  <p class="title">5</p>
                 </div>
               </div>
             </nav>
-            <!--
-      Part 1: Main Store Page
 
-      Requirements:
-
-      1. Header across the top must include your store's name, a logo,
-      and use a different background colour, web font, etc.  You must also include
-      a link to your contact.html page.  Your header should include info about
-      what the store is, what it sells, etc.  Use some images to try and draw
-      the user in.  NOTE: place all your site's images in the `src/images/` directory.
-
-      2. Below the header, a multi-column layout of items you can purchase in the
-      store.  You must have at least 10 items in your store, and at least 2
-      categories of items. For example, if you are selling clothing, you might
-      have categories for Men, Women, and Children, and each category would have
-      its own set of items.  Each item should include:
-
-        - a picture
-        - the item's name/title
-        - a more complete description of the item
-        - a category (i.e., each item must belong to a category)
-        - a price.
-
-      Each item should be its own "card" (i.e., some kind of box around each item
-      separating one from the next, with suitable whitespace between).
-
-      3. A sidebar (left or right, depending on your design) of the item layout
-      section, showing the different categories of items in your store.  If a
-      user clicks on one of the categories, use CSS and JavaScript to hide all
-      other items in the store (i.e., only show items for the chosen category).
-      Make sure you include a way to return to seeing all categories, and make it
-      obvious to the user that they are only seeing a partial list of items when
-      you filter by category (i.e., use CSS and HTML to change things somehow).
-
-      4. Below the items, a footer with the name of the store, any relevant links you
-      need to give users, as well as a small HTML form for entering an Email
-      address and clicking a "Subscribe" button to subscribe to the store's
-      newsletter. Use https://formspree.io/ to automatically submit the form to
-      your email address (i.e., when a user fills out their email address and
-      clicks submit, *you* should get that information sent to your email
-      address via formspree.io).  Make sure you setup your account on
-      https://formspree.io/.
-
-      5. Use two different Web Fonts for your store.  The titles should be different
-      from any regular text.  Use a free font service like https://fonts.google.com/
-      or any other that you choose.  You can also experiment with different font
-      sizes and colours to draw attention toward or away from various parts of
-      your design.
-
-      6. Pick a colour theme using a tool like https://colorhunt.co/ with at least
-      3 colours (primary, secondary, accent), and use them throughout your site
-      for backgrounds, borders, fonts. Your store page needs to look attractive
-      and marks will be given for good a good looking site.  No one will buy from
-      a store that looks like its owners aren't professional or don't care about
-      details.  Also make sure that the colour contrast in your site is suitable
-      for everyone to read.
-
-      7. Use modern CSS to help you achieve your layout.  For example, Flexbox
-      and CSS Grid can help you create professional looking layouts.  Here
-      are some guides to get you started:
-
-       - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
-       - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
-
-      You are also welcome to use existing CSS libraries to help you with your layout,
-      but you must also include your own styles (i.e., you can't use a library
-      for everything in your design).
-
-      8. Make sure you don't use copyrighted materials from other sites.  If you use
-      icons, fonts, images, etc., make sure you are legally permitted to reuse them,
-      and include references to indicate where you got them. Some resources to consider:
-
-        - https://unsplash.com/ for images
-        - https://fontawesome.com/ for icons
-        - https://gallery.manypixels.co/ or https://undraw.co/illustrations for illustrations (SVG)
-
-      9. Make sure you reduce the download size of images you include in your
-      store.  Users don't want to download 10s or 100s of megabytes of data, especially
-      on mobile.  You can use an online tool like https://squoosh.app/ to help you
-      reduce images.  You will lose marks if your images aren't optimized for the web.
-
-
-      10. Make sure you have no JavaScript or other errors in your Dev Tools Console.
-      Run your site, and test all aspects of it with the Console open, and fix
-      any issues you encounter.
-
-      11. Make sure your forms all work as they should, testing them yourself,
-      and also have someone else test it for you.  The easiest way to find bugs
-      in software is to let someone who didn't build it try to use it!
-
-    -->
           </div>
         </div>
       </div>
@@ -787,7 +1087,7 @@
 
 <footer>
 
-  <div class="form column is-7 is-hidden">
+  <div class="form column is-7 is-hidden" id="subscribe-form">
 
 
     <form action="https://formspree.io/xqkdqvez"

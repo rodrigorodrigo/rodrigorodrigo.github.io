@@ -4,7 +4,7 @@
    * See countries-data.js for format of the countries data set.
    */
   /**
-   * 
+   *
    *   var quickviews = bulmaQuickview.attach(); // quickviews now contains an array of all Quickview instances
 
    * Register click handlers for every menu item in the page.  Use the `countries`
@@ -33,8 +33,17 @@
     });
 
 
-
-
+  // Textbox on radio option
+    $(function() {
+      $('input[name="answer"]').on('click', function() {
+          if ($(this).val() == 'orderproblem') {
+              $('#orderproblemtext').show();
+          }
+          else {
+              $('#orderproblemtext').hide();
+          }
+      });
+  });
 
 
   // Close mobile & tablet menu on item click
@@ -67,7 +76,7 @@
           $("#helicopters-box").hide();
           $("#subscribe-form").hide();
 
-          
+
           break;
         case 'all':
           $("#airplanes-box").show();
@@ -95,9 +104,9 @@
   document.addEventListener('DOMContentLoaded', function () {
 
     // Dropdowns
-  
+
     var $dropdowns = getAll('.dropdown:not(.is-hoverable)');
-  
+
     if ($dropdowns.length > 0) {
       $dropdowns.forEach(function ($el) {
         $el.addEventListener('click', function (event) {
@@ -105,18 +114,18 @@
           $el.classList.toggle('is-active');
         });
       });
-  
+
       document.addEventListener('click', function (event) {
         closeDropdowns();
       });
     }
-  
+
     function closeDropdowns() {
       $dropdowns.forEach(function ($el) {
         $el.classList.remove('is-active');
       });
     }
-  
+
     // Close dropdowns if ESC pressed
     document.addEventListener('keydown', function (event) {
       var e = event || window.event;
@@ -124,14 +133,14 @@
         closeDropdowns();
       }
     });
-  
+
     // Functions
-  
+
     function getAll(selector) {
       return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
     }
   });
-  
+
 
 
 
